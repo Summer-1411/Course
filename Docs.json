@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "6424149a0cddcc22111e4b34"
+  },
+  "name": "Document C++",
+  "slug": "Tai lieu C++",
+  "link_Office": "https://isocpp.org/",
+  "My_link": "https://www.w3schools.com/cpp/"
+},{
+  "_id": {
+    "$oid": "64241a0d0cddcc22111e4b35"
+  },
+  "name": "Document Javascript",
+  "slug": "Tai lieu javascipt",
+  "link_Office": "https://www.javascript.com/",
+  "My_link": "https://www.w3schools.com/js/"
+}]

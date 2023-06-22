@@ -1,0 +1,186 @@
+extends main 
+block content
+        .hero_area
+            .bg-box
+                img(src='/img/backgroud.png' alt='')
+            section.slider_section
+                #customCarousel1.carousel.slide(data-ride='carousel')
+                    .carousel-inner
+                        .carousel-item.active
+                            .container
+                                .row
+                                    .col-md-7.col-lg-6
+                                        .detail-box
+                                            h1
+                                                | Khóa Học Lập Trình
+                                            p
+                                                | Khóa học lập trình dnhf cho những người mới bắt đầu , những người mới tiếp cận , chuyển ngành , đơn giản dễ hiểu và hiệu quả
+                                            .btn-box
+                                                a.btn1(href='/category')
+                                                    | Bắt Đầu Ngay
+                        .carousel-item
+                            .container
+                                .row
+                                    .col-md-7.col-lg-6
+                                        .detail-box
+                                            h1
+                                                | Khóa học lập trình
+                                            p
+                                                | Khóa học lập trình dnhf cho những người mới bắt đầu , những người mới tiếp cận , chuyển ngành , đơn giản dễ hiểu và hiệu quả
+                                            .btn-box
+                                                a.btn1(href='')
+                                                    | Bắt đàu ngay
+                        .carousel-item
+                            .container
+                                .row
+                                    .col-md-7.col-lg-6
+                                        .detail-box
+                                            h1
+                                                | Khóa học lập trình
+                                            p
+                                                | Khóa học lập trình dnhf cho những người mới bắt đầu , những người mới tiếp cận , chuyển ngành , đơn giản dễ hiểu và hiệu quả
+                                            .btn-box
+                                                a.btn1(href='')
+                                                    | Bắt đầu ngay
+                    .container
+                        ol.carousel-indicators
+                            li.active(data-target='#customCarousel1' data-slide-to='0')
+                            li(data-target='#customCarousel1' data-slide-to='1')
+                            li(data-target='#customCarousel1' data-slide-to='2')
+
+        section.offer_section.layout_padding-bottom
+            .offer_container
+                .container
+                    h1 Hot
+                    .row
+                        each Coures in coures
+                            .col-md-6
+                                
+                                    .box
+                                        .img-box
+                                            img(src=`${Coures.img}` alt='')
+                                        .detail-box
+                                            h5=Coures.name
+                                            h6
+                                                span=Coures.level
+                                            a(href='/category')
+                                                | Học Ngay
+                                            
+                        
+        section.food_section.layout_padding-bottom
+            .container
+                .heading_container.heading_center
+                    h2
+                        | Danh Sách Khóa Học
+                ul.filters_menu
+                        li.active(data-filter='*') All
+                        each Coures in coures
+                            li.BTN_COURES(data-filter=`.${Coures.id}`)=Coures.name
+                            
+                .filters-content
+                    .row.grid
+                        each Coures in coures
+                            .CONTENT_COURES.col-sm-6.col-lg-4.all(class=Coures.id)
+                                .box
+                                    div
+                                        .img-box
+                                            img(src=`${Coures.img}` alt='')
+                                        .detail-box
+                                            h5.TITLE_COURES=Coures.name
+                                            p=Coures.mota
+                                            .options
+                                                a(href=`/coure-detail/${Coures.slug}`)
+                                                    | Xem Chi Tiết
+                                                a(href=`/Coures/${Coures.slug}`)
+                                                    | Learn Now         
+                .btn-box
+                    a(href='/category')
+                        | View More
+                
+
+        section.about_section.layout_padding
+            .container
+                .row
+                    .col-md-6
+                        .img-box
+                            img(src='/img/about_me.jpg' alt='')
+                    .col-md-6
+                        .detail-box
+                            .heading_container
+                                h2
+                                    | Về tôi
+                            p
+                                | Tôi Phát Triển trang web này mục đích giúp tôi  và các bạn đam mê lập trình học tập và tổng hợp các khóa học chất lượng , những nguồn tài liệu hay , dễ dạng tìm kiếm và học hỏi đặc biệt là các bạn mới tiếp cận lập trình
+                            a(href='/about')
+                                | Đọc Thêm
+
+
+        section.book_section.layout_padding
+            .container
+                .heading_container
+                    h2
+                        | Câu Hỏi Của bạn 
+                .row
+                    .col-md-6
+                        .form_container
+                            form(action='')
+                                    div
+                                        input.form-control(type='text' placeholder='Your Name')
+                                    div
+                                        input.form-control(type='text' placeholder='Phone Number')
+                                    div
+                                        input.form-control(type='email' placeholder='Your Email')
+                                    div
+                                        textarea.form-control(type='email' placeholder='My Question')
+                                    div
+                                        select.form-control.nice-select.wide
+                                            option(value='' disabled='' selected='')
+                                                | Bạn Đến Từ Đâu
+                                            option(value='')
+                                                | Hà Nội
+                                            option(value='')
+                                                | Thành Phố HCM
+                                            option(value='')
+                                                | Nam Định
+                                            option(value='')
+                                                | ...
+                                    div
+                                        input.form-control(type='date')
+                                    .btn_box
+                                        button
+                                            | Gửi
+                    .col-md-6
+                        .map_container
+                            #googleMap
+
+        section.client_section.layout_padding-bottom
+            .container
+                .heading_container.heading_center.psudo_white_primary.mb_45
+                    h2
+                        | Những Bình Luận Về Chúng Tôi
+                .carousel-wrap.row
+                    .owl-carousel.client_owl-carousel
+                        .item
+                            .box
+                                .detail-box
+                                    p
+                                        | Khoá học thực sự chất lượng cho người mới, hoặc người mất gốc như mình
+                                    h6
+                                        | Lê Toàn
+                                    p
+                                        | Lê Văn Toàn
+                                .img-box
+                                    img.box-img(src='images/client1.jpg' alt='')
+                        .item
+                            .box
+                                .detail-box
+                                    p
+                                        | Khoá học thực sự chất lượng cho người mới, hoặc người mất gốc như mình
+                                    h6
+                                        | Lê Toàn
+                                    p
+                                        | Lê Văn Toàn
+                                .img-box
+                                    img.box-img(src='images/client2.jpg' alt='')
+
+

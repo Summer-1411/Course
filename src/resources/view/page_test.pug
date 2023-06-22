@@ -1,0 +1,44 @@
+extends main 
+block content
+    .sub_page
+        .hero_area
+            .bg-box
+            
+            section.book_section.layout_padding
+                .container
+                    .heading_container
+                        h2
+                            | Câu Hỏi Của bạn
+                    .row
+                        .col-md-6
+                            .form_container
+                                form(action='')
+                                    div
+                                        input.form-control(type='text' placeholder='Your Name')
+                                    div
+                                        input.form-control(type='text' placeholder='Phone Number')
+                                    div
+                                        input.form-control(type='email' placeholder='Your Email')
+                                    div
+                                        textarea.form-control(type='email' placeholder='My Question')
+                                    div
+                                        select.form-control.nice-select.wide
+                                            option(value='' disabled='' selected='')
+                                                | Bạn Đến Từ Đâu
+                                            option(value='')
+                                                | Hà Nội
+                                            option(value='')
+                                                | Thành Phố HCM
+                                            option(value='')
+                                                | Nam Định
+                                            option(value='')
+                                                | ...
+                                    div
+                                        input.form-control(type='date')
+                                    .btn_box
+                                        button
+                                            | Gửi 
+                        .col-md-6
+                            .map_container
+                                #googleMap
+            

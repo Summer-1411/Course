@@ -1,0 +1,153 @@
+
+//- doctype html
+//- head
+//-   meta(charset='utf-8')
+//-   meta(http-equiv='X-UA-Compatible' content='IE=edge')
+//-   // Tell the browser to be responsive to screen width
+//-   meta(name='viewport' content='width=device-width, initial-scale=1')
+//-   meta(name='keywords' content='wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template')
+//-   meta(name='description' content='Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework')
+//-   meta(name='robots' content='noindex,nofollow')
+//-   title Ample Admin Lite Template by WrapPixel
+//-   link(rel='canonical' href='')
+//-   // Favicon icon
+//-   link(rel='icon' type='image/png' sizes='16x16' href='')
+//-   // Custom CSS
+//-   link(href='/css/style.min.css' rel='stylesheet')
+//-   link(rel="stylesheet", href="/css/c.css/style.css")
+//-   //- link(rel="stylesheet", href="/css/c.css/style.css")
+extends ../main
+block content 
+
+  .preloader
+    .lds-ripple
+      .lds-pos
+      .lds-pos
+
+
+  #main-wrapper(data-layout='vertical' data-navbarbg='skin5' data-sidebartype='full' data-sidebar-position='absolute' data-header-position='absolute' data-boxed-layout='full')
+
+    header.topbar(data-navbarbg='skin5')
+      nav.navbar.top-navbar.navbar-expand-md.navbar-dark
+        .navbar-header(data-logobg='skin6')
+        
+          a.navbar-brand(href='/')
+            //- b.logo-icon
+            //-   img(src='/Bootstrap_plugins_admin/images/logo-icon.png' alt='homepage')
+            span.logo-text
+              img(src='/Bootstrap_plugins_admin/images/logo-text.png' alt='homepage')
+        
+          a.nav-toggler.waves-effect.waves-light.text-dark.d-block.d-md-none(href='javascript:void(0)')
+            i.ti-menu.ti-close
+      
+        #navbarSupportedContent.navbar-collapse.collapse(data-navbarbg='skin5')
+          ul.navbar-nav.d-none.d-md-block.d-lg-none
+            li.nav-item
+              a.nav-toggler.nav-link.waves-effect.waves-light.text-white(href='javascript:void(0)')
+                i.ti-menu.ti-close
+          ul.navbar-nav.ms-auto.d-flex.align-items-center
+
+            li.in
+              form.app-search.d-none.d-md-block.me-3(role='search')
+                input.form-control.mt-0(type='text' placeholder='Search...')
+                a.active(href='')
+                  i.fa.fa-search
+          
+            li
+              a.profile-pic(href='/admin/profine')
+                img.img-circle(src=`${user.img}` alt='user-img' width='36')
+                span.text-white.font-medium= user.username
+          
+    aside.left-sidebar(data-sidebarbg='skin6')
+      // Sidebar scroll
+      .scroll-sidebar
+        // Sidebar navigation
+        nav.sidebar-nav
+          ul#sidebarnav
+            // User Profile
+            li.sidebar-item.pt-2
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/dashboard' aria-expanded='false')
+                i.far.fa-clock(aria-hidden='true')
+                span.hide-menu Dashboard
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/profine' aria-expanded='false')
+                i.fa.fa-user(aria-hidden='true')
+                span.hide-menu Profile
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/manager-users' aria-expanded='false')
+                i.fa-solid.fa-people-roof
+                span.hide-menu Manager User
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='' aria-expanded='false')
+                i.fa-solid.fa-comments
+                span.hide-menu Manager Commemt
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='' aria-expanded='false')
+                i.fa-solid.fa-list-check
+                span.hide-menu Manager Posts
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/CreateCoures' aria-expanded='false')
+                i.fa-solid.fa-square-plus
+                span.hide-menu CreateCoures
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/ManagerCoures' aria-expanded='false')
+                i.fa-solid.fa-list-check
+                span.hide-menu Manager Coures
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='404.html' aria-expanded='false')
+                i.fa.fa-info-circle(aria-hidden='true')
+                span.hide-menu Error 404
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/system' aria-expanded='false')
+                i.fa-sharp.fa-solid.fa-gear
+                span.hide-menu System
+    .page-wrapper
+      .page-breadcrumb.bg-white
+        .row.align-items-center
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Create User
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            .d-md-flex
+              ol.breadcrumb.ms-auto
+                li
+                  a.fw-normal(href='#') Dashboard
+              a.btn.btn-danger.d-none.d-md-block.pull-right.ms-3.hidden-xs.hidden-sm.waves-effect.waves-light.text-white(href='https://www.wrappixel.com/templates/ampleadmin/' target='_blank')
+                | Upgrade
+                | to Pro
+          form.top.form(method='' action='')
+              .container
+                  
+                  .form-group
+                      h1.text Thêm Tài Khoản Admin
+                      input.editAdmin_ID.form-control(value=`${user.id}` disabled type='text'  name='id')
+                      label.text(for='name') User Name
+                      input.editAdmin_name.form-control(value=`${user.username}` type='text' placeholder='Username' name='name')
+                      small#emailHelp.form-text.text-muted.text Hãy Nhập Thông Tin Chính Xác.
+                  .form-group
+                      label.text(for='Email') Email
+                      input.editAdmin_email.form-control(value=`${user.email}` type='text' placeholder='Email' name='Email')
+                  
+                  .form-group
+                      label.text(for='Confirm Password') Password
+                      input.editAdmin_Confirm_Password.form-control(value=`${user.confirmpassword}` type='text' placeholder='Confirm Password' name='Confirm Password')
+                  .form-group
+                      label.text(for='level') Chọn vai trò
+                  .form-group
+                      form
+                            input.listAdmin#Admin(type='radio' name='EditAdmin' value='admin' checked)
+                            label(for='html') | Admin
+                            br
+                            input.listAdmin#Manager(type='radio' name='EditManager' value='manager')
+                            label(for='css') | Quản trị
+                  button.BTN_edit_Admin.btn.btn-primary Chấp Nhận
+                  button.BTN_begin_Admin.btn.btn-primary Làm lại 
+                  
+        
+
+  script(src='/Bootstrap_plugins_admin/bower_components/jquery/dist/jquery.min.js')
+  script(src='/bootstrap/dist/js/bootstrap.bundle.min.js')
+  script(src='/js/js_admin/app-style-switcher.js')
+  script(src='/js/js_admin/waves.js')
+  script(src='/js/js_admin/sidebarmenu.js')
+  script(src='/js/js_admin/custom.js')
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js") 
+  script(src="/js/CreateCoures.js") 

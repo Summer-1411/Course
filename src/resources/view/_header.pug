@@ -1,0 +1,100 @@
+
+doctype html
+html
+    head
+        // Basic
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        // Mobile Metas
+        meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        // Site Metas
+        meta(name='keywords' content='')
+        meta(name='description' content='')
+        meta(name='author' content='')
+        link(rel='shortcut icon' href='images/favicon.png' type='')
+        title  Feane 
+        link(rel='stylesheet' type='text/css' href='/css/Bootrap_css/Style_page/Home_styles.css')
+        link(rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css' integrity='sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==' crossorigin='anonymous')
+        link(href='/css/Bootrap_css/Fontawaresome/font-awesome.min.css' rel='stylesheet')
+        link(href='/css/Bootrap_css/Style_template/style.css' rel='stylesheet')
+        link(href='/css/Bootrap_css/responsive/responsive.css' rel='stylesheet')
+        body 
+
+                //- .hero_area  
+                //-     .bg-box
+                //-         img(src='/img/hero-bg.jpg' alt='')
+                
+                header.header_section
+                    .container
+                        nav.navbar.navbar-expand-lg.custom_nav-container
+                            a.navbar-brand(href='/')
+                                span
+                                    | Coures
+                            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                                span  
+                            #navbarSupportedContent.collapse.navbar-collapse
+                                ul.navbar-nav.mx-auto
+                                    li.nav-item.active
+                                        a.nav-link(href='/')
+                                            | Home 
+                                            span.sr-only (current)
+                                    li.nav-item
+                                        a.nav-link(href='/category') Danh Sách Khóa Học
+                                    li.nav-item
+                                        a.nav-link(href='/Docs') Tài Liệu 
+                                    li.nav-item
+                                        a.nav-link(href='/about') Về Chúng Tôi
+                                    //- li.nav-item
+                                    //-     a.nav-link(href='') More
+                                    .dropdown
+                                        button.btn.btn-secondary.dropdown-toggle(type='button' data-toggle='dropdown')
+                                            | More
+                                            span.caret
+                                        ul.dropdown-menu
+                                            li
+                                                a.nav-link(href='/test') Câu hỏi của bạn
+                                            li
+                                                a.nav-link(href='/test') New
+                                            li
+                                                a.nav-link(href='/test') Câu hỏi của bạn
+                                    //- li.nav-item
+                                    //-     a.nav-link(href='/test') Câu hỏi của bạn
+                                .user_option
+                                    
+                                    if(!user)
+                                        a.order_online(href='/signup')
+                                                    | Sign up
+                                        a.order_online(href='/login')
+                                                    | Login
+                                    else
+                                        form.form-inline
+                                            button.btn.my-2.my-sm-0.nav_search-btn(type='submit')
+                                                i.fa.fa-search(aria-hidden='true')
+                                        div.form-inline.Message_notifile.test.hide
+                                            div.btn.my-2.my-sm-0.nav_search-btn
+                                                i.fa-regular.fa-bell
+                                            div.Show_Message    
+                                                .toast(role='alert' aria-live='assertive' aria-atomic='true')
+                                                    .toast-header
+                                                        div.Message_img
+                                                            img.rounded.mr-2(src=`${user.img || user.photos[0].value}` alt='...')
+                                                        strong.mr-auto=user.username||user.displayName
+                                                        small.text-muted=user.photos
+                                                        button.ml-2.mb-1.close(type='button' data-dismiss='toast' aria-label='Close')
+                                                            span(aria-hidden='true') ×
+                                                    .toast-body
+                                                        | Bạn vừa đăng nhập vào website
+                                        a#USER_NAME.user_link(href='')
+                                            i.fa.fa-user(aria-hidden='true')
+                                            span=user.username || user.displayName
+                                            
+                                        div#MENU_BOX.dropdown-menu.dropdown-menu-right 
+                                            if(user.role==="admin")
+                                                a.dropdown-item(href="/admin/Dashboard") Manager Admin
+                                                a.dropdown-item(href="/admin/profine") Profile Admin
+
+                                            if(user.role==="user"||user.displayName)
+                                                a.dropdown-item(href=`/user`) Profile 
+                                            a#BTN_LOGOUT.dropdown-item(href="") Logout
+

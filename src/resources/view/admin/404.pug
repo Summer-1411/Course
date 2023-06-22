@@ -1,0 +1,30 @@
+doctype html
+html(dir='ltr')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(name='keywords' content='wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template')
+        meta(name='description' content='Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework')
+        meta(name='robots' content='noindex,nofollow')
+        title Not Found
+        link(rel='canonical' href='')
+        link(rel='icon' type='image/png' sizes='16x16' href='   ')
+        link(href='/css/style.min.css' rel='stylesheet')
+    body
+        .main-wrapper
+            .preloader
+                .lds-ripple
+                    .lds-pos
+                    .lds-pos
+            .error-box
+                .error-body.text-center
+                    h1.error-title.text-danger 404
+                    h3.text-uppercase.error-subtitle PAGE NOT FOUND !
+                    p.text-muted.mt-4.mb-4
+                        | YOU SEEM TO BE TRYING TO FIND HIS WAY HOME
+                    a.btn.btn-danger.btn-rounded.waves-effect.waves-light.mb-5.text-white(href='/') Back to home
+        script(src='/Bootstrap_plugins_admin/bower_components/jquery/dist/jquery.min.js')
+        script(src='/bootstrap/dist/js/bootstrap.bundle.min.js')
+        script.
+            $(".preloader").fadeOut();

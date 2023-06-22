@@ -1,0 +1,57 @@
+[
+  {
+    "_id": {
+      "$oid": "6411afa716676c6607988e3a"
+    },
+    "mota": "C++ là một trong những ngôn ngữ lập trình phổ biến nhất trên thế giới.",
+    "name": "lập trình C++",
+    "img": "https://csc.edu.vn/data/images/mon-hoc/lap-trinh/lap-trinh-vien-python.png",
+    "level": "esay",
+    "slug": "ngon ngu lap trinh",
+    "videoId": "OHuNQf9Sl6Y"
+  },
+  {
+    "_id": {
+      "$oid": "6414080ca7a83a73605e3432"
+    },
+    "name": "học java",
+    "mota": "Ngôn ngữ lập trình Java là một ngôn ngữ bậc cao được viết dựa trên các cú pháp của C và C++. Ngôn ngữ Java còn được biết đến với tốc độ xử lý cao, được ứng dụng cao trên máy tính và các thiết bị di động trong phát triển các trò chơi và phần mềm.",
+    "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fghouse.com.vn%2Fc-plus-plus-la-gi-ung-dung-cua-cpp&psig=AOvVaw0kCBg4d0oQZl3WV6uBscLy&ust=1679136453159000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJCK8fDk4v0CFQAAAAAdAAAAABAE",
+    "level": "esay",
+    "slug": "hoc java"
+  },
+  {
+    "_id": {
+      "$oid": "641447304d32e86c23c95647"
+    },
+    "name": "Học lập trình javascript",
+    "mota": "ngôn ngữ được dùng để lập trình web có thể viết được cả backend ",
+    "img": "data:image/jpeg;base64,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Haeo7uXZfBRenztk9dL+iqO9ya8yKGSyeul/SS4Nv7mX9Oj8+f8A2FdWsfJXkbNZLJHC58bnDE55BdhxOcXEDo6CtPBbb+By8Wel34LzWIwleVaUlB2bfn2luMoqKVzWIr5Yy1xadQSDwyVioNNaM2BERQDdIiLlG0IiIAiIgCIiAIiIAiIgCIiApIyo3jtGq187Hs3kjj+PBbFFZpYytS0UnbldmLimanau4lU2ruJUyexVzZl2bvDgoLgQaEUKvwxlSe6b+p+phlXIu2ruJTau4lWqiz6RW67+p+pGVci/au4lNq7iVYidIrdd/U/UZVyMm1dxKbV3yirFROkVuu/qYyrkX7V3yim1d8oq1UTpFbrvvYyrkX7V3EptXcSrVROkVuu/qfqMq5F+1dxKbV3EqxE6RW67+p+oyrkX7V3EptXcSrETpFbrv6n6jKuRk2ruJVNq75RViJ7er133sWXIqqKqotJIREQG6REXKNoREQBERAEREAREQBERAEREAREQBWTQhwzHcd4V6Im1qgauezFvaOP4rEtyok9jrm3I8N3/AArlPELdLvMWiCqKrmkGhFCqKyYBERAEREAREQBERAEREAREQBERAEREBukRFyjaEREAREQBERAEREAREQBERAEREAREQBERAWSxBwzH4ha+eylvaOP4qqLdSqSjJJEMjoiK+awiIgCIiAIiIAiIgCIiAIiIAiIgP//Z",
+    "level": "medium",
+    "slug": "hoc lap trinh javascript"
+  },
+  {
+    "_id": {
+      "$oid": "6417c9c7ce761cfafd42ab28"
+    },
+    "name": "javascript từ A-Z",
+    "mota": "JavaScript là ngôn ngữ lập trình website phổ biến hiện nay, nó được tích hợp và nhúng vào HTML giúp website trở nên sống động hơn. JavaScript đóng vai trò như là một phần của trang web, thực thi cho phép Client-side script từ phía người dùng cũng như phía máy chủ (Nodejs) tạo ra các trang web động.",
+    "videoId": "oisatX-kcZM",
+    "img": "https://cdn.tgdd.vn/hoi-dap/1321801/javascript-la-gi-co-vai-tro-gi-cach-bat-javascript-tren.002.jpeg",
+    "level": "nangcao",
+    "Lesson": [
+      {
+        "$oid": "61c2eb315731c648f1466bfe"
+      }
+    ],
+    "createdAt": {
+      "$date": "2023-03-20T02:49:43.047Z"
+    },
+    "updatedAt": {
+      "$date": "2023-03-20T02:49:43.047Z"
+    },
+    "slug": "javascript-tu-a-z",
+    "__v": 0
+  },
+  {}
+]

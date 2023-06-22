@@ -1,0 +1,22 @@
+extends main 
+block content 
+            table.table.mt-3
+                thead.thead-dark
+                    tr
+                        th(scope='col') #
+                        th(scope='col') Name
+                        th(scope='col') My Link
+                        th(scope='col') Trang Chủ
+                tbody
+                    each Doucument in docs
+                        tr
+                            th(scope='row') 1
+                            td=Doucument.name
+                            td
+                                a(href=`${Doucument.My_link}` target="_blank") My Link
+                            td
+                                a(href=`${Doucument.link_Office}` target="_blank") Trang chủ
+
+
+
+                

@@ -1,0 +1,237 @@
+//- doctype html
+//- head
+//-   meta(charset='utf-8')
+//-   meta(http-equiv='X-UA-Compatible' content='IE=edge')
+//-   // Tell the browser to be responsive to screen width
+//-   meta(name='viewport' content='width=device-width, initial-scale=1')
+//-   meta(name='keywords' content='wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template')
+//-   meta(name='description' content='Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework')
+//-   meta(name='robots' content='noindex,nofollow')
+//-   title Ample Admin Lite Template by WrapPixel
+//-   link(rel='canonical' href='')
+//-   // Favicon icon
+//-   link(rel='icon' type='image/png' sizes='16x16' href='')
+//-   // Custom CSS
+//-   link(href='/Bootstrap_plugins_admin/bower_components/chartist/dist/chartist.min.css' rel='stylesheet')
+//-   link(rel='stylesheet' href='/Bootstrap_plugins_admin/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')
+//-   // Custom CSS
+//-   link(href='/css/style.min.css' rel='stylesheet')
+extends ../main
+
+block content 
+  .preloader
+    .lds-ripple
+      .lds-pos
+      .lds-pos
+
+  #main-wrapper(data-layout='vertical' data-navbarbg='skin5' data-sidebartype='full' data-sidebar-position='absolute' data-header-position='absolute' data-boxed-layout='full')
+
+    header.topbar(data-navbarbg='skin5')
+      nav.navbar.top-navbar.navbar-expand-md.navbar-dark
+        .navbar-header(data-logobg='skin6')
+          a.navbar-brand(href="/")
+
+            //- b.logo-icon
+            //-   img(src='/Bootstrap_plugins_admin/images/logo-icon.png' alt='homepage')
+            span.logo-text
+              // dark Logo text
+              img(src='/Bootstrap_plugins_admin/images/logo-text.png' alt='homepage')
+
+          a.nav-toggler.waves-effect.waves-light.text-dark.d-block.d-md-none(href='javascript:void(0)')
+            i.ti-menu.ti-close
+        #navbarSupportedContent.navbar-collapse.collapse(data-navbarbg='skin5')
+          ul.navbar-nav.ms-auto.d-flex.align-items-center
+            li.in
+              form.app-search.d-none.d-md-block.me-3(role='search')
+                input.form-control.mt-0(type='text' placeholder='Search...')
+                a.active(href='')
+                  i.fa.fa-search
+            li
+              a.profile-pic(href='/admin/profine')
+                img.img-circle(src=`${user.img}` alt='user-img' width='36')
+                span.text-white.font-medium= user.username
+    aside.left-sidebar(data-sidebarbg='skin6')
+      // Sidebar scroll
+      .scroll-sidebar
+        // Sidebar navigation
+        nav.sidebar-nav
+          ul#sidebarnav
+            // User Profile
+            li.sidebar-item.pt-2
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/dashboard' aria-expanded='false')
+                i.far.fa-clock(aria-hidden='true')
+                span.hide-menu Dashboard
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/profine' aria-expanded='false')
+                i.fa.fa-user(aria-hidden='true')
+                span.hide-menu Profile
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/manager-users' aria-expanded='false')
+                i.fa-solid.fa-people-roof
+                span.hide-menu Manager User
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='' aria-expanded='false')
+                i.fa-solid.fa-comments
+                span.hide-menu Manager Commemt
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='' aria-expanded='false')
+                i.fa-solid.fa-list-check
+                span.hide-menu Manager Posts
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/CreateCoures' aria-expanded='false')
+                i.fa-solid.fa-square-plus
+                span.hide-menu CreateCoures
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/ManagerCoures' aria-expanded='false')
+                i.fa-solid.fa-list-check
+                span.hide-menu Manager Coures
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='404.html' aria-expanded='false')
+                i.fa.fa-info-circle(aria-hidden='true')
+                span.hide-menu Error 404
+            li.sidebar-item
+              a.sidebar-link.waves-effect.waves-dark.sidebar-link(href='/admin/system' aria-expanded='false')
+                i.fa-sharp.fa-solid.fa-gear
+                span.hide-menu System
+    .page-wrapper
+      .page-breadcrumb.bg-white
+        .row.align-items-center
+          .col-lg-3.col-md-4.col-sm-4.col-xs-12
+            h4.page-title Dashboard
+          .col-lg-9.col-sm-8.col-md-8.col-xs-12
+            .d-md-flex
+              ol.breadcrumb.ms-auto
+                li
+                  a.fw-normal(href='/admin/dashboard') Dashboard
+              a.btn.btn-danger.d-none.d-md-block.pull-right.ms-3.hidden-xs.hidden-sm.waves-effect.waves-light.text-white(href='' target='_blank')
+                |Test
+  
+      .container-fluid
+        .row.justify-content-center
+          .col-lg-4.col-md-12
+            .white-box.analytics-info
+              h3.box-title Total Visit
+              ul.list-inline.two-part.d-flex.align-items-center.mb-0
+                li
+                  #sparklinedash
+                    canvas(width='67' height='30' style='display: inline-block; width: 67px; height: 30px; vertical-align: top;')
+                li.ms-auto
+                  span.counter.text-success 659
+          .col-lg-4.col-md-12
+            .white-box.analytics-info
+              h3.box-title Total Page Views
+              ul.list-inline.two-part.d-flex.align-items-center.mb-0
+                li
+                  #sparklinedash2
+                    canvas(width='67' height='30' style='display: inline-block; width: 67px; height: 30px; vertical-align: top;')
+                li.ms-auto
+                  span.counter.text-purple 869
+          .col-lg-4.col-md-12
+            .white-box.analytics-info
+              h3.box-title Unique Visitor
+              ul.list-inline.two-part.d-flex.align-items-center.mb-0
+                li
+                  #sparklinedash3
+                    canvas(width='67' height='30' style='display: inline-block; width: 67px; height: 30px; vertical-align: top;')
+                li.ms-auto
+                  span.counter.text-info 911
+      
+        .row
+          .col-md-12.col-lg-12.col-sm-12.col-xs-12
+            .white-box
+              h3.box-title Lượt Xem Trong Năm
+              .d-md-flex
+                ul.list-inline.d-flex.ms-auto
+                  li.ps-3
+                    h5
+                      i.fa.fa-circle.me-1.text-info
+                      | Mac
+                  li.ps-3
+                    h5
+                      i.fa.fa-circle.me-1.text-inverse
+                      | Windows
+              #ct-visits(style='height: 405px;')
+                .chartist-tooltip(style='top: -17px; left: -12px;')
+                  span.chartist-tooltip-value 6
+        .row
+          .col-md-12.col-lg-12.col-sm-12
+            .white-box
+              .d-md-flex.mb-3
+                h3.box-title.mb-0 Các tài Khoản đăng nhập gần đây
+                .col-md-3.col-sm-4.col-xs-6.ms-auto
+                  select.form-select.shadow-none.row.border-top
+                    option March 2021
+                    option April 2021
+                    option May 2021
+                    option June 2021
+                    option July 2021
+              .table-responsive
+                table.table.no-wrap
+                  thead
+                    tr
+                      th.border-top-0 #
+                      th.border-top-0 Name
+                      th.border-top-0 Active
+                      th.border-top-0 Email
+                      th.border-top-0 Time
+                  tbody
+                    each Users in users 
+                      if(Users.role!=="admin")
+                        tr
+                          td 1
+                          td.txt-oflo=Users.username
+                          td=Users.active
+                          td.txt-oflo=Users.email
+                          td
+                            span.text-success test
+                    
+      
+        .row
+          .col-md-12.col-lg-8.col-sm-12
+            .card.white-box.p-0
+              .card-body
+                h3.box-title.mb-0 Những ý kiến ​​gần đây
+              .comment-widgets
+                each Users in users
+                  if(Users.role!=="admin")
+                    .d-flex.flex-row.comment-row.p-3.mt-0
+                      .p-2
+                        img.rounded-circle(src=`${Users.img || user.photos[0].value}` alt='user' width='50')
+                      .comment-text.ps-2.ps-md-3.w-100
+                        h5.font-medium=Users.username
+                        span.mb-3.d-block
+                          | Lorem Ipsum is simply dummy text of the printing and type setting industry.It has survived not only five centuries.
+                        .comment-footer.d-md-flex.align-items-center
+                          span.badge.bg-primary.rounded Pending
+                          .text-muted.fs-2.ms-auto.mt-2.mt-md-0 April 14, 2021
+                
+          .col-lg-4.col-md-12.col-sm-12
+            .card.white-box.p-0
+              .card-heading
+                h3.box-title.mb-0 Danh sách trò chuyện
+              .card-body
+                ul.chatonline
+                  each Users in users
+                    if(Users.role!=="admin")
+                      li
+                        .call-chat
+                          button.btn.btn-success.text-white.btn-circle.btn(type='button')
+                            i.fas.fa-phone
+                          button.btn.btn-info.btn-circle.btn(type='button')
+                            i.far.fa-comments.text-white
+                        a.d-flex.align-items-center(href='')
+                          img.img-circle(src=`${Users.img || user.photos[0].value}` alt='user-img')
+                          .ms-2
+                            span.text-dark=Users.username||user.displayName
+                              small.d-block.text-success.d-block online
+                  
+
+  script(src='/Bootstrap_plugins_admin/bower_components/jquery/dist/jquery.min.js')
+  script(src='/bootstrap/dist/js/bootstrap.bundle.min.js')
+  script(src='js/app-style-switcher.js')
+  script(src='/Bootstrap_plugins_admin/bower_components/jquery-sparkline/jquery.sparkline.min.js')
+  script(src='/js/js_admin/waves.js')
+  script(src='/js/js_admin/sidebarmenu.js')
+  script(src='/js/js_admin/custom.js')
+  script(src='/Bootstrap_plugins_admin/bower_components/chartist/dist/chartist.min.js')
+  script(src='/Bootstrap_plugins_admin/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')
+  script(src='/js/js_admin/pages/dashboards/dashboard1.js')

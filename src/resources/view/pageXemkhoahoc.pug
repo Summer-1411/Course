@@ -1,0 +1,142 @@
+extends main 
+block content
+        if user || !user
+            .blog-single.gray-bg
+                .container
+                    .row.align-items-start
+                        .col-lg-8.m-15px-tb
+                            article.article
+                                .article-img
+                                    img(src=`${coures.img}` title='' alt='')
+                                .article-title
+                                    h6
+                                        a(href=`/Coures/${coures.slug}`) Learn Now
+                                    h2=coures.name
+                                    .media
+                                        .avatar
+                                            img(src='https://bootdey.com/img/Content/avatar/avatar1.png' title='' alt='')
+                                        .media-body
+                                            label Đinh Tuấn
+                                            span 08/04/2023
+                                .article-content
+                                    p=coures.motachitiet
+                                    h4 What are my payment options?
+                                    p
+                                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    blockquote
+                                        p
+                                            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                                        p.blockquote-footer
+                                            | Someone famous in 
+                                            cite(title='Source Title') Dick Grayson
+                                    p
+                                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                .nav.tag-cloud
+                                    a(href='#') Design
+                                    a(href='#') Development
+                                    a(href='#') Travel
+                                    a(href='#') Web Design
+                                    a(href='#') Marketing
+                                    a(href='#') Research
+                                    a(href='#') Managment
+                            .contact-form.article-comment
+                                h4 Leave a Reply
+                                form#contact-form(method='POST')
+                                    .row
+                                        .col-md-6
+                                            .form-group
+                                                input#name.form-control(name='Name' placeholder='Name *' type='text')
+                                        .col-md-6
+                                            .form-group
+                                                input#email.form-control(name='Email' placeholder='Email *' type='email')
+                                        .col-md-12
+                                            .form-group
+                                                textarea#message.form-control(name='message' placeholder='Your message *' rows='4')
+                                        .col-md-12
+                                            .send
+                                                button.px-btn.theme
+                                                    span Submit
+                                                    i.arrow
+                        .col-lg-4.m-15px-tb.blog-aside
+                          
+                            .widget.widget-author
+                                .widget-title
+                                    h3 Author
+                                .widget-body
+                                    .media.align-items-center
+                                        .avatar
+                                            img(src='https://bootdey.com/img/Content/avatar/avatar6.png' title='' alt='')
+                                        .media-body
+                                            h6
+                                                | Xin chào tôi là 
+                                                br
+                                                | Đinh Khắc Tuấn
+                                    p
+                                        | Tôi thiết kế và phát triển các dịch vụ cho khách hàng thuộc mọi quy mô, chuyên tạo ra các trang web, dịch vụ web và cửa hàng trực tuyến phong cách, phong cách
+                            // End Author
+                            // Trending Post
+                            .widget.widget-post
+                                .widget-title
+                                    h3 Trending Now
+                                    each Lesson in lesson
+                                        p 1
+                                .widget-body
+                            // End Trending Post
+                            // Latest Post
+                            .widget.widget-latest-post
+                                .widget-title
+                                    h3 Latest Post
+                                .widget-body
+                                    .latest-post-aside.media
+                                        .lpa-left.media-body
+                                            .lpa-title
+                                                h5
+                                                    a(href='#') Prevent 75% of visitors from google analytics
+                                            .lpa-meta
+                                                a.name(href='#')
+                                                    | Rachel Roth
+                                                a.date(href='#')
+                                                    | 26 FEB 2020
+                                        .lpa-right
+                                            a(href='#')
+                                                img(src='https://www.bootdey.com/image/400x200/FFB6C1/000000' title='' alt='')
+                                    .latest-post-aside.media
+                                        .lpa-left.media-body
+                                            .lpa-title
+                                                h5
+                                                    a(href='#') Prevent 75% of visitors from google analytics
+                                            .lpa-meta
+                                                a.name(href='#')
+                                                    | Rachel Roth
+                                                a.date(href='#')
+                                                    | 26 FEB 2020
+                                        .lpa-right
+                                            a(href='#')
+                                                img(src='https://www.bootdey.com/image/400x200/FFB6C1/000000' title='' alt='')
+                                    .latest-post-aside.media
+                                        .lpa-left.media-body
+                                            .lpa-title
+                                                h5
+                                                    a(href='#') Prevent 75% of visitors from google analytics
+                                            .lpa-meta
+                                                a.name(href='#')
+                                                    | Rachel Roth
+                                                a.date(href='#')
+                                                    | 26 FEB 2020
+                                        .lpa-right
+                                            a(href='#')
+                                                img(src='https://www.bootdey.com/image/400x200/FFB6C1/000000' title='' alt='')
+                            // End Latest Post
+                            // widget Tags
+                            .widget.widget-tags
+                                .widget-title
+                                    h3 Latest Tags
+                                .widget-body
+                                    .nav.tag-cloud
+                                        a(href='#') Design
+                                        a(href='#') Development
+                                        a(href='#') Travel
+                                        a(href='#') Web Design
+                                        a(href='#') Marketing
+                                        a(href='#') Research
+                                        a(href='#') Managment
