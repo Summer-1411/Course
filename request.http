@@ -1,0 +1,117 @@
+// Đăng nhập
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "123456"
+}
+//Đăng ký
+###
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "test", 
+    "email": "test@gmail.com", 
+    "password": "123456", 
+    "confirmPassword": "123456"
+}
+
+
+
+//Create admin
+###
+POST http://localhost:3000/api/auth/createAdmin
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTZiZDc2ZjlmOTU2MmRjNDlmOWIzYyIsImlzQWRtaW4iOiJhZG1pbiIsImlhdCI6MTY4NzYyNTAwOH0.uOWZ6Zz9wcQim7XhzRfLRF98ASnu11PKFlNYK5ThfEo
+
+{
+    "username": "test", 
+    "email": "testAdmin@gmail.com", 
+    "password": "123456", 
+    "confirmPassword": "123456",
+    "role": "admin"
+}
+
+
+//Get user
+###
+GET http://localhost:3000/api/user/6496bcb9f9f9562dc49f9b2d
+Content-Type: application/json
+
+//Get all user (Chỉ admin)
+###
+GET http://localhost:3000/api/user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTZiZDc2ZjlmOTU2MmRjNDlmOWIzYyIsImlzQWRtaW4iOiJhZG1pbiIsImlhdCI6MTY4NzYyODI0OH0.OhRna7wPzcsJzCn-nFID5oH_OpUc9Tlu1BrNyLxMcQQ
+
+
+//update user, chỉ người đó và admin có quyền update
+//ví dụ user có _id: 6496bcb9f9f9562dc49f9b2d
+###
+PUT http://localhost:3000/api/user/update/6496bcb9f9f9562dc49f9b2d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTZiY2I5ZjlmOTU2MmRjNDlmOWIyZCIsImlzQWRtaW4iOiJ1c2VyIiwiaWF0IjoxNjg3NjI3MzI5fQ.YCyfYdY5vetpUMP3ErQSv-vqYOjL1iIfLTAsT82sLbs
+
+{
+    "email": "johnNew.doe@example.com",
+    "username": "Name new"
+}
+
+//Xoá tạm thời user, chỉ admin có quyền xoá
+//ví dụ user có _id: 6496bcb9f9f9562dc49f9b2d
+###
+PUT http://localhost:3000/api/user/temporaryDelete/6496bcb9f9f9562dc49f9b2d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTZiZDc2ZjlmOTU2MmRjNDlmOWIzYyIsImlzQWRtaW4iOiJhZG1pbiIsImlhdCI6MTY4NzYyNTkwMn0.fRswQjwvM_D-u1touaBvzd8mTfEEtb2JUG7qk5eJ0Rg
+
+
+
+
+//Thêm mới khoá học
+###
+POST http://localhost:3000/api/course
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTZiZDc2ZjlmOTU2MmRjNDlmOWIzYyIsImlzQWRtaW4iOiJhZG1pbiIsImlhdCI6MTY4NzYzMDQwNH0.lLuw2W3mPhunbafxcd_2s-ACHrQ0uKJqOHGzUyBbN4w
+
+{
+    "name" : "C++",
+    "img": "abc.jgp",
+    "mota": "C++",
+    "videoId": "T1CYS6c5eqY",
+    "level": "Cơ bản"
+}
+
+
+//Get khoá học theo id
+###
+GET http://localhost:3000/api/course/649732ee0cb986d29d31c869
+Content-Type: application/json
+
+
+//Get ds khoá học theo
+###
+GET http://localhost:3000/api/course
+Content-Type: application/json
+
+//Cập nhật khoá học (Admin)
+###
+PUT http://localhost:3000/api/course/649732ee0cb986d29d31c869
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTZiZDc2ZjlmOTU2MmRjNDlmOWIzYyIsImlzQWRtaW4iOiJhZG1pbiIsImlhdCI6MTY4NzYzMDQwNH0.lLuw2W3mPhunbafxcd_2s-ACHrQ0uKJqOHGzUyBbN4w
+
+{
+    "name" : "C++ new",
+    "img": "abc.jgp",
+    "mota": "C++ new",
+    "videoId": "T1CYS6c5eqY",
+    "level": "Cơ bản"
+}
+
+
+//XOá khóc học 
+###
+DELETE  http://localhost:3000/api/course/649732ee0cb986d29d31c869
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTZiZDc2ZjlmOTU2MmRjNDlmOWIzYyIsImlzQWRtaW4iOiJhZG1pbiIsImlhdCI6MTY4NzYzMDQwNH0.lLuw2W3mPhunbafxcd_2s-ACHrQ0uKJqOHGzUyBbN4w

@@ -28,7 +28,12 @@ exports.login = async (req, res, next) => {
   try {
     console.log(req.body);
     const { password, email } = req.body;
-    if (!password || !email) return res.json("email || pass ko hợp lệ");
+    if (!password || !email) {
+      return res.status(500).json({
+        status: "failed",
+        message: "Thiếu email hoặc password !"
+      });
+    }
 
     const user = await User.findOne({ email }).select("+password");
     // console.log(user);
@@ -36,18 +41,20 @@ exports.login = async (req, res, next) => {
     if (!user) {
       return res.status(500).json({
         status: "failed",
+        message: "Tài khoản không tồn tại !"
       });
     }
     if (password != user.password)
       return res.json({
         status: "failed",
-        message: "vui lòng nhập đúng mật khẩu",
+        message: "vui lòng nhập đúng mật khẩu !",
       });
     SaveTokenCookie(user, 200, req, res);
   } catch (err) {
     console.log(err);
     res.status(500).json({
       status: "failed",
+      message: "Có lỗi xảy ra trong quá trình đăng nhập !",
       err,
     });
   }
@@ -61,7 +68,10 @@ exports.CreateUser = async (req, res, next) => {
       !req.body.password ||
       !req.body.confirmpassword
     ) {
-      return res.json("vui lòng nhập đầy đủ thông tin");
+      return res.status(500).json({
+        status: "failed",
+        message: "Missing parameters !"
+      });
     }
 
     const user = await User.create({
@@ -73,6 +83,7 @@ exports.CreateUser = async (req, res, next) => {
     if (!user) {
       return res.status(401).json({
         status: "failed",
+        message: "Có lỗi khi kết nối cơ sở dữ liệu"
       });
     }
     const token = CreateToken(user._id);
@@ -84,6 +95,7 @@ exports.CreateUser = async (req, res, next) => {
   } catch (error) {
     res.status(500).json({
       status: "failed",
+      message: "Có lỗi trong quá trình đăng ký",
       error,
     });
   }

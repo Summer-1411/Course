@@ -8,6 +8,14 @@ const cookieParser = require("cookie-parser");
 const port = process.env.PORT || 3000;
 const routs = require("./routers");
 const db = require("./config/db");
+
+//Tùng viết code start
+const authRoute = require("./routes/auth")
+const userRoute = require("./routes/user")
+const courseRoute = require("./routes/course")
+//Tùng viết code end
+
+
 require("dotenv").config();
 db.connect();
 app.use(express.static(path.join(__dirname, "public")));
@@ -39,13 +47,33 @@ app.set("views", path.join(__dirname, "resources/view"));
 
 app.set("trust proxy", 1);
 
+
+//Tùng viết code
+app.use('/api/auth', authRoute)
+app.use('/api/user', userRoute)
+app.use('/api/course', courseRoute)
+
+//Tùng viết code end
+
+
+
+
 routs(app);
+
 passport.serializeUser(function (user, done) {
   done(null, user);
 });
 passport.deserializeUser(function (user, done) {
   done(null, user);
 });
+
+
+
+
+
+
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
 });
+
+

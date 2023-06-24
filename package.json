@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
+    "start": "nodemon src/index.js",
     "dev": "nodemon --inspect src/index.js",
     "watch": "node-sass --watch src/public/scss/style.scss --output src/public/css/c.css/"
   },
@@ -23,6 +23,7 @@
     "mongoose": "^6.10.0",
     "mongoose-slug-generator": "^1.0.4",
     "morgan": "^1.10.0",
+    "node-fetch": "^2.6.11",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.21",
     "passport": "^0.6.0",
@@ -30,6 +31,7 @@
     "passport-github2": "^0.1.12",
     "passport-google-oauth": "^2.0.0",
     "pug": "^3.0.2",
+    "selenium-webdriver": "^4.10.0",
     "validator": "^13.9.0"
   }
 }
