@@ -8,7 +8,7 @@ const verifyToken = (req, res, next) => {
 	if (!token)
 		return res
 			.status(401)
-			.json({ success: false, message: 'Không có Access Token !' })
+			.json({ status: false, message: 'Không có Access Token !' })
 
 	try {
 
@@ -18,7 +18,7 @@ const verifyToken = (req, res, next) => {
 		next()
 	} catch (error) {
 		console.log(error)
-		return res.status(403).json({ success: false, message: 'Access Token không hợp lệ !' })
+		return res.status(403).json({ status: false, message: 'Access Token không hợp lệ !' })
 	}
 }
 
@@ -34,7 +34,7 @@ const verifyTokenAndAuthorization = (req, res, next) => {
         if(id === par || req.user.isAdmin === "admin"){
             next();
         }else {
-            return res.status(403).json({success: false, message: "Bạn không được phép làm điều đó !"})
+            return res.status(403).json({status: false, message: "Bạn không được phép làm điều đó !"})
         }
     })
 }
@@ -44,7 +44,7 @@ const verifyTokenAndAdmin = (req, res, next) => {
         if(req.user.isAdmin === "admin"){
             next();
         }else {
-            return res.status(403).json({success: false, message: "Bạn không được phép làm điều đó !"})
+            return res.status(403).json({status: false, message: "Bạn không được phép làm điều đó !"})
         }
     })
 }

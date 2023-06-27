@@ -3,7 +3,7 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "admin@gmail.com",
+    "email": "admi4444n@gmail.com",
     "password": "123456"
 }
 //Đăng ký
@@ -73,14 +73,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTZiZDc2Z
 ###
 POST http://localhost:3000/api/course
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0OTZiZDc2ZjlmOTU2MmRjNDlmOWIzYyIsImlzQWRtaW4iOiJhZG1pbiIsImlhdCI6MTY4NzYzMDQwNH0.lLuw2W3mPhunbafxcd_2s-ACHrQ0uKJqOHGzUyBbN4w
 
 {
-    "name" : "C++",
-    "img": "abc.jgp",
-    "mota": "C++",
-    "videoId": "T1CYS6c5eqY",
-    "level": "Cơ bản"
+    "name": "C++"
 }
 
 

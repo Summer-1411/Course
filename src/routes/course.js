@@ -16,6 +16,12 @@ const { verifyToken,
 router.post('/', verifyTokenAndAdmin, async (req, res) => {
     try {
         const { name, img, mota, videoId, level } = req.body
+        if(!name || !img || !mota || !videoId || !level){
+            return res.status(500).json({
+                status: false,
+                message: "Vui lòng nhập đầy đủ thông tin !"
+            });
+        }
         const Doc = await Coures.create({
             name,
             img,
@@ -23,6 +29,12 @@ router.post('/', verifyTokenAndAdmin, async (req, res) => {
             videoId,
             level
         });
+        if (!Doc) {
+            return res.status(401).json({
+                status: false,
+                message: "Có lỗi khi kết nối cơ sở dữ liệu !"
+            });
+        }
         res.status(200).json({
             status: true,
             message: "Thêm mới khoá học thành công ",
